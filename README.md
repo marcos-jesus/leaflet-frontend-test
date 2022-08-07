@@ -28,10 +28,10 @@ O principal objetivo deste teste é permitir que você demonstre suas habilidade
 
 # Instruções
 
-Para começar, faça o fork do repositório original acessando o link (lembre-se de fazer o fork logado com seu usuário GitHub)
-> https://github.com/terra-q/leaflet-frontend-test/fork
+Para começar, faça um repositório a partir da cópia do original acessando o link (lembre-se de logar com seu usuário GitHub)
+> https://github.com/terra-q/leaflet-frontend-test/generate
 
-Após o fork, clone o repositório localmente:
+Após a cópia, clone o repositório localmente:
 
 ```
 git clone https://github.com/<SEU_USUARIO>/leaflet-frontend-test.git
@@ -85,7 +85,7 @@ git clone https://github.com/<SEU_USUARIO>/leaflet-frontend-test.git
 * Além do Leaflet, aqui na TerraQ também utilizamos bibliotecas como D3.js e Chart.js para data visualization, portanto o uso delas é um plus.
 
 # Submissão
-* Faça o fork do repositório, adicione os usuários **@terra-q** e **@abreufilho** como colaboradores usando o link abaixo:
+* Faça a cópia do repositório, torne-o privado e adicione os usuários **@terra-q** e **@abreufilho** como colaboradores usando o link abaixo:
   * >https://github.com/SEU_USUARIO/leaflet-frontend-test/settings/access
 * Faça as alterações de modo a cumprir as tarefas deste teste, dê os commits necessários e o push final para o seu repositório remoto no GitHub, lembrando de fazê-lo antes do prazo final (09/08/2022 16:59h).
 * Em seguida, hospede a página utilizando o [GitHub Pages](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages)
