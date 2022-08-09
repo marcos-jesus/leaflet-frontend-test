@@ -1,29 +1,48 @@
-var map = L.map('map').setView([-19, -44], 7);
+function getStart () {
 
-var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19}).addTo(map);
-
-function onEachFeature(feature, layer) {
-    var popupContent = '<p>' + feature.geometry.type + '</p>';
-    if (feature.properties && feature.properties.popupContent) {
-        popupContent += "<br>"+feature.properties.popupContent;
-    }
-    layer.bindPopup(popupContent);
-}
-
-$.getJSON("https://terraq.com.br/api/teste-leaflet/pontos", function(data) {}).done(
-    function(data) {
-        var featureCollection = L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                var iconUrl = feature.properties.icon;
-                var featureIcon = L.icon({
-                    iconUrl: "https://www.freeiconspng.com/thumbs/warning-icon-png/warning-icon-24.png",
-                    iconSize: [32, 37],
-                    iconAnchor: [16, 37],
-                    popupAnchor: [0, -28]
+    const getDataLayer = async () => {
+        const response = await axios.get('https://terraq.com.br/api/teste-leaflet/visao-inicial');
+        const tileLayers = response.data
+        
+  
+        const getDataPoint = async() => {
+            const response = await axios.get('https://terraq.com.br/api/teste-leaflet/pontos');
+            const geometry = response.data
+  
+            const startMap = async() => {
+  
+                map = L.map('map', {
+                    center: tileLayers.initial_view.center,
+                    zoom: tileLayers.initial_view.zoom
                 });
-                return L.marker(latlng, {icon: featureIcon});
-            },
-            onEachFeature: onEachFeature
-        }).addTo(map);
-    }		
-);
+  
+                L.tileLayer(tileLayers.tile_layers[0].url, {
+                    attribution: tileLayers.tile_layers[0].attribution
+                }).addTo(map)
+  
+                geometry.forEach(element => {
+                    console.log(element.geometry.coordinates)
+  
+                    let myIcon = L.icon({
+                        iconUrl: element.properties.icon,
+                        iconSize: [38, 38],
+                        iconAnchor: [22, 94],
+                        popupAnchor: [-3, -76],
+                    })
+                    L.marker(element.geometry.coordinates, {icon: myIcon}).addTo(map)
+                        .bindPopup(element.properties.popupContent)
+                })
+  
+            }
+  
+            startMap();
+        }
+  
+        getDataPoint();
+    }
+  
+    getDataLayer();
+  
+  }
+  
+  getStart();
