@@ -1,5 +1,7 @@
 function getStart () {
 
+    console.log('Achei este repositório e decidi fazer o teste, não fiz entrevista com ninguém. \n infelizmente eu vi tarde demais, porém eu fiz do 0 consumindo o mapa, os pontos colocando os points no seus devidos lugares etc...')
+
     const getDataLayer = async () => {
         const response = await axios.get('https://terraq.com.br/api/teste-leaflet/visao-inicial');
         const tileLayers = response.data
