@@ -10,7 +10,7 @@
 
 <br/>
 
-> Aqui na Api ele veio de outro, forma de um array, porém ele veio inverso, quando eu colocava os pointers na tela eles apareciam no meio do mar. após uns minutos notei que estava inverso, o reverse() matou a "charada".
+> Aqui na Api ele veio de outra forma, veio como um array, porém os dados veio inverso, quando eu colocava os pointers na tela eles apareciam no meio do mar. após uns minutos notei que estava inverso, usando o reverse() matei a "charada".
 
 <br/>
 <br/>

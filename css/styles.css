@@ -13,3 +13,8 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+.btn-xs {
+    margin-left:2rem;
+    margin-top: 1rem;
+}
