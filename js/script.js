@@ -29,7 +29,7 @@ function getStart () {
                         iconAnchor: [22, 94],
                         popupAnchor: [-3, -76],
                     })
-                    L.marker(element.geometry.coordinates, {icon: myIcon}).addTo(map)
+                    L.marker(element.geometry.coordinates.reverse(), {icon: myIcon}).addTo(map)
                         .bindPopup(element.properties.popupContent)
                 })
   
